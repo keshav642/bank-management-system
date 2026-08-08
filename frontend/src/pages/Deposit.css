@@ -1,0 +1,517 @@
+/* ================================
+   DEPOSIT PAGE
+================================ */
+
+.transaction-page {
+  width: 100%;
+}
+
+/* ================================
+   PAGE HEADER
+================================ */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  color: #111827;
+  margin: 0 0 5px 0;
+}
+
+.page-header p {
+  color: #64748b;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ================================
+   TRANSACTION LAYOUT
+================================ */
+
+.transaction-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ================================
+   FORM CARD
+================================ */
+
+.form-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* ================================
+   FORM HEADER
+================================ */
+
+.form-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding-bottom: 22px;
+  margin-bottom: 25px;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.form-card-header h3 {
+  color: #111827;
+  font-size: 17px;
+  margin: 0 0 4px 0;
+}
+
+.form-card-header p {
+  color: #64748b;
+  font-size: 12px;
+  margin: 0;
+}
+
+/* ================================
+   DEPOSIT ICON
+================================ */
+
+.transaction-title-icon {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+  font-weight: bold;
+
+  flex-shrink: 0;
+}
+
+.deposit-title {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+/* ================================
+   FORM SECTION
+================================ */
+
+.form-section {
+  margin-bottom: 28px;
+}
+
+/* ================================
+   FORM GROUP
+================================ */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group label {
+  color: #475569;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.form-group label span {
+  color: #dc2626;
+}
+
+/* ================================
+   INPUT / TEXTAREA
+================================ */
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  border: 1px solid #dbe1e8;
+  border-radius: 7px;
+
+  padding: 11px 12px;
+
+  outline: none;
+
+  font-size: 13px;
+  color: #334155;
+
+  background: #ffffff;
+
+  font-family: inherit;
+
+  box-sizing: border-box;
+
+  transition: 0.2s ease;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px #dbeafe;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #a1aab8;
+}
+
+/* ================================
+   AMOUNT
+================================ */
+
+.transaction-amount-group {
+  margin-top: 18px;
+}
+
+.amount-input {
+  position: relative;
+  width: 100%;
+}
+
+.amount-input span {
+  position: absolute;
+
+  left: 12px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #64748b;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  z-index: 1;
+}
+
+.amount-input input {
+  padding-left: 30px;
+}
+
+/* ================================
+   DESCRIPTION
+================================ */
+
+.full-width {
+  margin-top: 18px;
+}
+
+/* ================================
+   FORM ACTIONS
+================================ */
+
+.form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 10px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ================================
+   CLEAR BUTTON
+================================ */
+
+.cancel-btn {
+  border: 1px solid #dbe1e8;
+
+  background: #ffffff;
+  color: #475569;
+
+  padding: 11px 18px;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.cancel-btn:hover {
+  background: #f8fafc;
+}
+
+.cancel-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ================================
+   DEPOSIT BUTTON
+================================ */
+
+.deposit-btn {
+  border: none;
+
+  background: #16a34a;
+  color: #ffffff;
+
+  padding: 11px 20px;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.deposit-btn:hover {
+  background: #15803d;
+}
+
+.deposit-btn:disabled {
+  background: #86efac;
+  cursor: not-allowed;
+}
+
+/* ================================
+   SUMMARY
+================================ */
+
+.transaction-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.summary-card {
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+
+  padding: 20px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* ================================
+   SUMMARY HEADER
+================================ */
+
+.summary-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.summary-header h3 {
+  color: #111827;
+
+  font-size: 16px;
+
+  margin: 0;
+}
+
+.summary-icon {
+  width: 35px;
+  height: 35px;
+
+  background: #dcfce7;
+  color: #16a34a;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+}
+
+/* ================================
+   SUMMARY ITEMS
+================================ */
+
+.summary-item {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 0;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.summary-item span {
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+.summary-item strong {
+  color: #334155;
+
+  font-size: 12px;
+
+  text-align: right;
+}
+
+.deposit-text {
+  color: #16a34a !important;
+}
+
+.summary-amount {
+  font-size: 14px !important;
+}
+
+/* ================================
+   SUMMARY TOTAL
+================================ */
+
+.summary-divider {
+  height: 1px;
+
+  background: #e5e7eb;
+
+  margin: 5px 0;
+}
+
+.summary-total {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 8px;
+}
+
+.summary-total span {
+  color: #475569;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.summary-total strong {
+  color: #16a34a;
+
+  font-size: 18px;
+}
+
+/* ================================
+   INFO CARD
+================================ */
+
+.info-card {
+  background: #eff6ff;
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 10px;
+
+  padding: 15px;
+
+  display: flex;
+
+  gap: 10px;
+}
+
+.info-icon {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+}
+
+.info-card strong {
+  display: block;
+
+  color: #1e40af;
+
+  font-size: 12px;
+
+  margin-bottom: 4px;
+}
+
+.info-card p {
+  color: #475569;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+
+  margin: 0;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 850px) {
+  .transaction-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-card {
+    padding: 18px;
+  }
+
+  .page-header h1 {
+    font-size: 23px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+
+  .summary-item,
+  .summary-total {
+    gap: 15px;
+  }
+}

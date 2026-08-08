@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #1e293b;
+}
+
+/* =========================
+   MAIN APP LAYOUT
+========================= */
+
+.app-layout {
+  min-height: 100vh;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.content {
+  margin-left: 250px;
+  padding-top: 72px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+
+  min-height: 100vh;
+
+  width: calc(100% - 250px);
+
+  transition:
+    margin-left 0.25s ease,
+    width 0.25s ease;
+
+  overflow-x: hidden;
+}
+
+/* =========================
+   COLLAPSED SIDEBAR
+========================= */
+
+.app-layout.sidebar-collapsed .content {
+  margin-left: 75px;
+  width: calc(100% - 75px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+  .content {
+    margin-left: 75px;
+    width: calc(100% - 75px);
+
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+}

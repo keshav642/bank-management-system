@@ -1,0 +1,257 @@
+
+/* ================================
+   Transfer Page
+================================ */
+
+.transfer-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(300px, 0.8fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* ================================
+   Transfer Icon
+================================ */
+
+.transfer-title {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.transfer-summary-icon {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+/* ================================
+   Transfer Arrow
+================================ */
+
+.transfer-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin: 24px auto 0;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #4f46e5;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* ================================
+   Transfer Button
+================================ */
+
+.transfer-btn {
+  background: #4f46e5;
+  color: white;
+}
+
+.transfer-btn:hover {
+  background: #4338ca;
+}
+
+/* ================================
+   Transfer Text
+================================ */
+
+.transfer-text {
+  color: #4f46e5;
+}
+
+.transfer-total {
+  color: #4f46e5;
+}
+
+/* ================================
+   Summary
+================================ */
+
+.transaction-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.summary-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.summary-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #111827;
+}
+
+.summary-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.summary-item span {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.summary-item strong {
+  color: #1e293b;
+  font-size: 14px;
+  text-align: right;
+}
+
+.summary-amount {
+  color: #4f46e5 !important;
+  font-size: 16px !important;
+}
+
+.summary-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 8px 0;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.summary-total span {
+  color: #475569;
+  font-weight: 600;
+}
+
+.summary-total strong {
+  font-size: 20px;
+}
+
+/* ================================
+   Secure Transfer Info
+================================ */
+
+.transfer-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 12px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.transfer-info .info-icon {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.transfer-info strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #166534;
+}
+
+.transfer-info p {
+  margin: 0;
+  color: #4b5563;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ================================
+   Form Improvements
+================================ */
+
+.transfer-layout .form-card {
+  min-width: 0;
+}
+
+.transfer-layout .form-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.transfer-layout .full-width {
+  grid-column: 1 / -1;
+}
+
+.transfer-layout .transaction-amount-group {
+  grid-column: 1 / -1;
+  max-width: 50%;
+}
+
+/* ================================
+   Responsive
+================================ */
+
+@media (max-width: 1100px) {
+  .transfer-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .transaction-summary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .transfer-layout .form-section {
+    grid-template-columns: 1fr;
+  }
+
+  .transfer-layout .transaction-amount-group {
+    grid-column: auto;
+    max-width: 100%;
+  }
+
+  .transfer-layout .full-width {
+    grid-column: auto;
+  }
+
+  .transfer-arrow {
+    margin: 0 auto;
+  }
+
+  .summary-item,
+  .summary-total {
+    gap: 10px;
+  }
+}

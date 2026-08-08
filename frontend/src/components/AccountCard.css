@@ -1,0 +1,211 @@
+/* ================= ACCOUNT CARD ================= */
+
+.account-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.account-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+}
+
+
+/* ================= HEADER ================= */
+
+.account-card-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+
+/* ================= ICON ================= */
+
+.account-card-icon {
+  width: 44px;
+
+  height: 44px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #dbeafe;
+
+  color: #2563eb;
+
+  border-radius: 10px;
+
+  font-size: 20px;
+
+  font-weight: bold;
+}
+
+
+/* ================= TITLE ================= */
+
+.account-card-title {
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+
+  min-width: 0;
+}
+
+.account-card-title span {
+  color: #94a3b8;
+
+  font-size: 11px;
+
+  margin-bottom: 4px;
+}
+
+.account-card-title strong {
+  color: #334155;
+
+  font-size: 14px;
+}
+
+
+/* ================= STATUS ================= */
+
+.account-card-status {
+  background: #dcfce7;
+
+  color: #15803d;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+/* ================= HOLDER ================= */
+
+.account-card-holder {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding: 18px 0;
+}
+
+.account-card-holder span {
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+.account-card-holder strong {
+  color: #334155;
+
+  font-size: 14px;
+}
+
+
+/* ================= BALANCE ================= */
+
+.account-card-balance {
+  background: #f8fafc;
+
+  border-radius: 10px;
+
+  padding: 15px;
+
+  margin-bottom: 15px;
+}
+
+.account-card-balance span {
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.account-card-balance h2 {
+  margin-top: 6px;
+
+  color: #111827;
+
+  font-size: 22px;
+}
+
+
+/* ================= FOOTER ================= */
+
+.account-card-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-top: 14px;
+
+  border-top: 1px solid #f1f5f9;
+}
+
+.account-card-footer span {
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+.account-card-footer strong {
+  color: #475569;
+
+  font-size: 12px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 500px) {
+
+  .account-card {
+    padding: 16px;
+  }
+
+  .account-card-status {
+    display: none;
+  }
+
+  .account-card-balance h2 {
+    font-size: 20px;
+  }
+
+}
