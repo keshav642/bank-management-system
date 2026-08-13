@@ -1,165 +1,226 @@
-# 🏦 Bank Management System
+# 🏦 Bank Management System — Frontend
 
-A full-stack **Bank Management System** built using **React, FastAPI, and PostgreSQL**.
+A modern React frontend for the **Bank Management System**, connected to a FastAPI backend and PostgreSQL database.
+
+The frontend provides a simple dashboard for managing bank accounts and performing common banking operations.
 
 ## 🚀 Features
 
-* 📊 Dashboard with account data
-* 🏦 Create bank account
-* 👥 View all accounts
-* 🔍 Search accounts
-* 🗑️ Delete accounts
-* 💰 Deposit money
-* 💸 Withdraw money
-* 🔄 Transfer money between accounts
-* 🗄️ PostgreSQL database integration
-* ⚡ REST API using FastAPI
-
-## 🖥️ Project Screenshots
-
-### Dashboard
-
-![Dashboard](Screenshots/Dashboard.png)
-
-### Accounts
-
-![Accounts](Screenshots/Accounts.png)
-
-### Create Account
-
-![Create Account](Screenshots/Create_Account.png)
-
-### Deposit Money
-
-![Deposit Money](Screenshots/Deposit.png)
-
-### Withdraw Money
-
-![Withdraw Money](Screenshots/Withdraw.png)
-
-### Transfer Money
-
-![Transfer Money](Screenshots/Transfer.png)
+- 📊 Account dashboard
+- 🏦 Create bank accounts
+- 👥 View all accounts
+- 🔍 Search accounts
+- 🗑️ Delete accounts
+- 💰 Deposit money
+- 💸 Withdraw money
+- 🔄 Transfer money between accounts
+- 🔌 REST API integration with FastAPI
+- ⚡ Axios-based API communication
+- 📱 Responsive user interface
 
 ## 🛠️ Tech Stack
 
-### Frontend
-
-* React
-* React Router
-* Axios
-* CSS
-* Vite
-
-### Backend
-
-* Python
-* FastAPI
-* Pydantic
-
-### Database
-
-* PostgreSQL
+- **React**
+- **Vite**
+- **React Router**
+- **Axios**
+- **CSS**
 
 ## 📁 Project Structure
 
-BankManagementSystem/
+```text
+frontend/
+├── public/
+│   ├── favicon.svg
+│   └── icons.svg
 │
-├── app/
-│   ├── dao/
-│   │   └── bank_dao.py
+├── src/
+│   ├── assets/
+│   │   ├── hero.png
+│   │   ├── react.svg
+│   │   └── vite.svg
 │   │
-│   ├── database/
-│   │   └── db.py
+│   ├── components/
+│   │   ├── AccountCard.jsx
+│   │   ├── AccountCard.css
+│   │   ├── Navbar.jsx
+│   │   ├── Navbar.css
+│   │   ├── Sidebar.jsx
+│   │   └── Sidebar.css
 │   │
-│   ├── models/
-│   │   └── bank_Account.py
+│   ├── pages/
+│   │   ├── Accounts.jsx
+│   │   ├── Accounts.css
+│   │   ├── CreateAccount.jsx
+│   │   ├── CreateAccount.css
+│   │   ├── Dashboard.jsx
+│   │   ├── Dashboard.css
+│   │   ├── Deposit.jsx
+│   │   ├── Deposit.css
+│   │   ├── Transfer.jsx
+│   │   ├── Transfer.css
+│   │   ├── Withdraw.jsx
+│   │   └── Withdraw.css
 │   │
-│   └── main.py
+│   ├── api.js
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
 │
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── assets/
-│   │   ├── api.js
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   │
-│   ├── package.json
-│   └── vite.config.js
-│
-├── Screenshots/
-│   ├── Dashboard.png
-│   ├── Accounts.png
-│   ├── Create_Account.png
-│   ├── Deposit.png
-│   ├── Withdraw.png
-│   └── Transfer.png
-│
+├── .env.example
 ├── .gitignore
-└── Readme.md
-
+├── index.html
+├── package.json
+├── package-lock.json
+└── vite.config.js
+```
 
 ## ⚙️ Installation & Setup
 
 ### 1. Clone the repository
 
-bash
+```bash
 git clone https://github.com/keshav642/bank-management-system.git
-cd bank-management-system
+cd bank-management-system/frontend
+```
 
+### 2. Install dependencies
 
-### 2. Backend Setup
-
-Create a virtual environment:
-
-bash
-python3 -m venv venv
-
-
-Activate it:
-
-bash
-source venv/bin/activate
-
-
-Install dependencies:
-
-bash
-pip install fastapi uvicorn psycopg2-binary
-
-
-Start the backend:
-
-bash
-uvicorn app.main:app --reload
-
-
-### 3. Frontend Setup
-
-Open another terminal:
-
-bash
-cd frontend
+```bash
 npm install
+```
+
+### 3. Configure environment variables
+
+Create a `.env` file inside the `frontend` directory:
+
+```env
+VITE_API_URL=http://127.0.0.1:8000
+```
+
+The frontend reads the API URL using:
+
+```javascript
+import.meta.env.VITE_API_URL
+```
+
+Do not commit the actual `.env` file to GitHub.
+
+A `.env.example` file is included in the repository as a template.
+
+### 4. Start the development server
+
+```bash
 npm run dev
+```
 
+The frontend will be available at:
 
-The frontend will run using Vite.
+```text
+http://localhost:5173
+```
 
-## 🗄️ Database
+## 🔌 Backend Connection
 
-This project uses **PostgreSQL** as the database.
+The frontend communicates with the FastAPI backend through Axios.
 
-Before running the application, configure your PostgreSQL database connection in the backend database configuration.
+The API base URL is configured using:
 
-> ⚠️ Never upload your actual database password or other secrets to GitHub. Use environment variables such as `.env` for sensitive credentials.
+```env
+VITE_API_URL=http://127.0.0.1:8000
+```
+
+The backend should be running before using account operations.
+
+Start the backend from the project root:
+
+```bash
+python3 -m uvicorn app.main:app --reload
+```
+
+Backend:
+
+```text
+http://127.0.0.1:8000
+```
+
+FastAPI documentation:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+## 📸 Screenshots
+
+### Dashboard
+
+![Dashboard](../Screenshots/Dashboard.png)
+
+### Accounts
+
+![Accounts](../Screenshots/Accounts.png)
+
+### Create Account
+
+![Create Account](../Screenshots/Create_Account.png)
+
+### Deposit
+
+![Deposit](../Screenshots/Deposit.png)
+
+### Withdraw
+
+![Withdraw](../Screenshots/Withdraw.png)
+
+### Transfer
+
+![Transfer](../Screenshots/Transfer.png)
+
+## 🔐 Environment Variables
+
+| Variable | Description | Example |
+|---|---|---|
+| `VITE_API_URL` | FastAPI backend URL | `http://127.0.0.1:8000` |
+
+> Never commit `.env` files containing sensitive configuration or credentials.
+
+## 🧪 API Integration
+
+The frontend uses Axios to communicate with the following backend endpoints:
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/accounts` | Get all accounts |
+| GET | `/accounts/{account_number}` | Get account |
+| POST | `/accounts` | Create account |
+| DELETE | `/accounts/{account_number}` | Delete account |
+| POST | `/accounts/{account_number}/deposit` | Deposit money |
+| POST | `/accounts/{account_number}/withdraw` | Withdraw money |
+| POST | `/accounts/transfer` | Transfer money |
+
+## 🏗️ Build for Production
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+The production files will be generated inside:
+
+```text
+dist/
+```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
 
 ## 👨‍💻 Author
 
 **Keshav Jha**
 
-GitHub: [keshav642](https://github.com/keshav642)
-
-
+GitHub: https://github.com/keshav642
