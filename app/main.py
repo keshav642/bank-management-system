@@ -1,6 +1,9 @@
+
+from decimal import Decimal
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from app.models.bank_Account import BankAccount
 from app.dao.bank_dao import BankDao
@@ -33,17 +36,17 @@ dao = BankDao()
 # =========================================================
 
 class DepositRequest(BaseModel):
-    amount: float
+    amount: Decimal = Field(gt=0)
 
 
 class WithdrawRequest(BaseModel):
-    amount: float
+    amount: Decimal = Field(gt=0)
 
 
 class TransferRequest(BaseModel):
     sender_account: int
     receiver_account: int
-    amount: float
+    amount: Decimal = Field(gt=0)
 
 
 # =========================================================
