@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bank-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bank-frontend
+  template:
+    metadata:
+      labels:
+        app: bank-frontend
+    spec:
+      containers:
+        - name: bank-frontend
+          image: bank-frontend:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bank-frontend-service
+spec:
+  type: NodePort
+  selector:
+    app: bank-frontend
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30080

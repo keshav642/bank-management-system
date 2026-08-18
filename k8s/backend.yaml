@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bank-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bank-backend
+  template:
+    metadata:
+      labels:
+        app: bank-backend
+    spec:
+      containers:
+        - name: backend
+          image: bank-backend:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DB_HOST
+              value: "host.minikube.internal"
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_NAME
+              value: "bank_system"
+            - name: DB_USER
+              value: "postgres"
+            - name: DB_PASSWORD
+              value: "2451238410"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bank-backend-service
+spec:
+  selector:
+    app: bank-backend
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+  type: ClusterIP
